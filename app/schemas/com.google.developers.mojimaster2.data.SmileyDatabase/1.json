@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "d1ad35301f0de5c8d3aaba484907b79c",
+    "entities": [
+      {
+        "tableName": "smiley",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`unicode` TEXT NOT NULL, `name` TEXT, `emoji` TEXT, PRIMARY KEY(`unicode`))",
+        "fields": [
+          {
+            "fieldPath": "mCode",
+            "columnName": "unicode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mName",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mEmoji",
+            "columnName": "emoji",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "unicode"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd1ad35301f0de5c8d3aaba484907b79c')"
+    ]
+  }
+}

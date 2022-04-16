@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.google.developers.examdemo">
+
+    <!-- permission requires for persisted job in JobScheduler -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="fontProviderRequests" android:value="Noto Color Emoji Compat"/>
+        <activity
+            android:exported="true"
+            android:name="com.androidmanifester.developers.examdemo.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.androidmanifester.developers.examdemo.SmileyListActivity"
+            android:label="@string/activity_smiley_list"
+            android:parentActivityName="com.androidmanifester.developers.examdemo.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.androidmanifester.developers.examdemo.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.androidmanifester.developers.examdemo.AddSmileyActivity"
+            android:label="@string/activity_add_smiley"
+            android:parentActivityName="com.androidmanifester.developers.examdemo.SmileyListActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.androidmanifester.developers.examdemo.SmileyListActivity" />
+        </activity>
+        <activity
+            android:name="com.androidmanifester.developers.examdemo.SettingActivity"
+            android:label="@string/title_activity_setting"
+            android:parentActivityName="com.androidmanifester.developers.examdemo.MainActivity">
+        </activity>
+    </application>
+
+</manifest>
